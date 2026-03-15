@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Cinema & Film Industry Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cinema & Film Industry Portal</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h2>Movie Reviews</h2>
+        
+        <section>
+            <h3>Submit a Review</h3>
+            <form id="review-form">
+                <div>
+                    <label for="movie-select">Movie:</label>
+                    <select id="movie-select" required>
+                        <option value="">Select a movie</option>
+                        <option value="1">RRR</option>
+                        <option value="2">Baahubali: The Beginning</option>
+                        <option value="3">KGF Chapter 2</option>
+                        <option value="4">3 Idiots</option>
+                        <option value="5">Dangal</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="username">Your Name:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div>
+                    <label for="rating">Rating (1-10):</label>
+                    <input type="number" id="rating" min="1" max="10" required>
+                </div>
+                <div>
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" required></textarea>
+                </div>
+                <button type="submit" class="btn">Submit Review</button>
+            </form>
+        </section>
+        
+        <section>
+            <h3>All Reviews</h3>
+            <div id="reviews-container">
+                <!-- Reviews will be loaded here by JavaScript -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Cinema & Film Industry Portal</p>
+    </footer>
+    
+    <script src="js/script.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - Cinema & Film Industry Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .seat-grid {
+            display: grid;
+            gap: 8px;
+            justify-content: center;
+            margin: 20px auto;
+            max-width: 100%;
+            overflow-x: auto;
+            padding: 10px;
+        }
+        .seat {
+            width: 35px;
+            height: 35px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.1);
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .seat:hover:not(.booked) {
+            background-color: rgba(102,126,234,0.5);
+            transform: scale(1.1);
+        }
+        .seat.selected {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+            box-shadow: 0 0 10px rgba(76,175,80,0.5);
+        }
+        .seat.booked {
+            background-color: #f44336;
+            border-color: #f44336;
+            color: white;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .screen {
+            width: 100%;
+            height: 20px;
+            background-color: #333;
+            margin: 20px 0;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cinema & Film Industry Portal</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h2>Book Tickets</h2>
+        <form id="booking-form" class="form">
+            <div>
+                <label for="movie-select">Select Movie:</label>
+                <select id="movie-select" required>
+                    <option value="">Choose a movie</option>
+                </select>
+            </div>
+            <div>
+                <label for="theater-select">Select Theater:</label>
+                <select id="theater-select" required>
+                    <option value="">Choose a theater</option>
+                </select>
+            </div>
+            <div>
+                <label for="num-seats">Number of Seats:</label>
+                <input type="number" id="num-seats" min="1" max="10" required>
+            </div>
+            <button type="submit" class="btn">Proceed to Seat Selection</button>
+        </form>
+        
+        <div id="seat-selection" style="display: none;">
+            <h3>Screen</h3>
+            <div class="screen">SCREEN</div>
+            <div id="seat-grid" class="seat-grid"></div>
+            <p>Selected Seats: <span id="selected-seats">None</span></p>
+            <button id="confirm-booking" class="btn" style="display: none;">Confirm Booking</button>
+        </div>
+        
+        <div id="my-bookings">
+            <h3>My Bookings</h3>
+            <div id="bookings-list"></div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Cinema & Film Industry Portal</p>
+    </footer>
+    
+    <script src="js/script.js?v=4"></script>
+</body>
+</html>
